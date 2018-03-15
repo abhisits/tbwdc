@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Javascript scraping test</title>
+</head>
+<body>
+  <p id='intro-text'></p>
+ <script type='text/javascript'>
+$(document).ready(function(){
+$.getJSON("https://www.set.or.th/set/historicaltrading.do?symbol=TRUE",
+  function(data){
+    //Iterate through the <li> inside of the URL's data
+    $.each(data.items, function(item){
+      $("<li/>").value().appendTo("#data");
+    });
+
+  });
+});
+</script>
+
+<!-- HTML -->
+<html>
+    <body>
+       <div id='data'></div>
+    </body>
+</html>
+</body>
+</html>
